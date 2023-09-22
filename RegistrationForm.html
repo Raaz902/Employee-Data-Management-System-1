@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Registration Form</title>
+    <script src="jquery-3.2.1.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="Registration.css" />
+    <script>
+        function getData() {
+            var firstName = document.getElementById("f1").value;
+            var lastName = document.getElementById("f2").value;
+            var dob = document.getElementById("dob").value;
+            var genderArray = document.getElementsByName("RadioBox");
+            var gender = "";
+            if (genderArray[0].checked) {
+                console.log("M");
+                gender = "M";
+                genderArray[0].checked = false;
+            }
+            else if (genderArray[1].checked) {
+                console.log("F");
+                gender = "F";
+                genderArray[1].checked = false;
+
+            }
+            var email = document.getElementById("em").value;
+            var address = document.getElementById("add").value;
+            var row_data = `<tr>
+                                    <td>${ firstName}${ lastName}</td>
+                                    <td>${ dob}</td>
+                                    <td>${ gender}</td>
+                                    <td>${ email}</td>
+                                    <td>${ address}</td>                            
+                                </tr>`
+
+            var tableBody = document.getElementById('tableBody');
+
+            tableBody.innerHTML = tableBody.innerHTML + row_data
+
+            console.log(tableBody.innerHTML);
+
+            var EraseData = document.getElementsByClassName("input1");
+            for (i = 0; i <= 6; i++) {
+                EraseData[i].value = "";
+            }
+
+
+
+            return false;
+        }
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <div id="Div1" width="100%">
+
+        <table id="tb1" border="2px" width="100%">
+            <tr>
+                <td>
+                    <h3 align="center">Employee form</h2>
+                </td>
+                <td>
+                    <h3 align="center">Employee Data</h2>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="Div11" width="100%">
+                        <form id="frm1" method="get" onsubmit="return getData()">
+                            First Name<input id="f1" type="text" / username="Name" class="input1">
+                            Last Name <input id="f2" type="text" / username="Name" class="input1"><br><br>
+                            DoB <input id="dob" type="date" / username="Name" class="input1">
+                            <input id="rd" type="radio" name="RadioBox" value="M" / class="input1" class="radio"> M
+                            <input id="gen" type="radio" name="RadioBox" value="F" / class="input1" class="radio"> F
+                            <br><br>
+                            E-mail<input id="em" type="email" / class="input1"><br><br>
+                            Address <textarea id="add" rows="5" cols="30" margin-top="20px" class="input1"></textarea>
+                            <br><br><br><br><br><br><br>
+                            <input id="sb1" type="submit" />
+                            <input id="res" type="reset" />
+                        </form>
+                    </div>
+                </td>
+                <td id="raaz">
+                    <div id="Div12">
+                        <table id="tb2" border="2px">
+                            <thead>
+                                <th>Full Name</th>
+                                <th>Date of Birth</th>
+                                <th>Gender</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody id="tableBody">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Registration Form</title>
+    <script src="jquery-3.2.1.min.js"></script>
+   
+        <link rel="stylesheet" type="text/css" href="RegistrationForm.css"/>
+        <script>
+            function getData()
+            {
+                var firstName=document.getElementById("f1").value;
+                var lastName=document.getElementById("f2").value;
+                var dob=document.getElementById("dob").value;
+                var genderArray=document.getElementsByName("RadioBox");
+                var gender = "";
+                if(genderArray[0].checked)
+                {
+                console.log("M");
+                gender = "M";
+                }
+                else if(genderArray[1].checked)
+                {
+                console.log("F");
+                gender = "F";
+                }
+              
+                var email =document.getElementById("em").value;
+                var address =document.getElementById("add").value;
+
+
+                var row_data  = `<tr>
+                                    <td>`+firstName+' '+lastName+`</td>
+                                    <td>`+dob+`</td>
+                                    <td>`+gender+`</td>
+                                    <td>`+email+`</td>
+                                    <td>`+address+`</td>
+                                </tr>`
+
+                var tableBody = document.getElementById('tableBody');
+
+                tableBody.innerHTML =  tableBody.innerHTML + row_data
+                
+                console.log(tableBody.innerHTML);
+
+                return false;                
+            }
+          
+          
+        </script>
+
+    
+</head>
+<body>
+    <div id="Div1">
+     
+        <table id="tb1" border="2px" width="100%">
+            <tr>
+                <td>
+                    <h3 align="center">Employee form</h2>
+                </td>
+                <td>
+                    <h3 align="center">Employee Data</h2>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                      <div id="Div11" width="100%">
+                        <form id="frm1"  method="get" onsubmit="return getData()">
+                            First Name<input id="f1" type="text"/ username="Name">
+                            Last Name <input id="f2" type="text"/ username="Name"><br><br>
+                            DoB <input id="dob" type="date"/ username="Name">
+                            <input id="rd" type="radio" name="RadioBox" value="M"/> M
+                            <input id="gen" type="radio" name="RadioBox" value="F"/> F <br><br>
+                            E-mail<input id="em" type="email"/><br><br>
+                            Address <textarea id="add" rows="5" cols="30" margin-top="20px"></textarea> <br><br><br><br><br><br><br>
+                            <input id="sb1" type="submit" />
+                            <input id="res" type="reset"/>
+
+                           
+      
+  
+  
+                          </form>  
+        
+        
+        
+                     </div>
+                   
+                    
+                </td>
+                <td>
+                    <div id="Div12" width="100%">
+                       
+                        
+                        <table border="2" width="100%">
+                            <thead>
+                                <th>Full Name</th>
+                                <th>Date of Birth</th>
+                                <th>Gender</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                            </thead>
+                            <tbody id="tableBody">
+                                
+                            </tbody>
+                        </table>
+                       
+                    
+                       
+                     
+      
+  
+  
+                    
+        
+        
+        
+                    </div>
+
+
+                </td>
+            </tr> 
+       </table>
+       
+
+        
+        
+        
+        
+        
+    </div>
+    
+</body>
+</html> -->

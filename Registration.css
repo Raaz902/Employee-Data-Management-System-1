@@ -1,0 +1,32 @@
+body{
+    color: white;
+    background-color: black;
+}
+input{
+    background-color: darkgrey;
+    border-radius: 10%;
+    border: 2px solid lightgreen;
+}
+textarea{
+    background-color: darkgray;
+    border-radius: 10%;
+    border: 2px solid lightgreen;
+}
+#Div1{
+    border: 1px solid green;
+}
+#raaz {
+  border: 2px solid purple; 
+  display: flex;  
+
+}
+#Div12{
+    
+      
+}
+#tb2{
+   border:1px solid green;
+   width:750px;
+     
+}
+
